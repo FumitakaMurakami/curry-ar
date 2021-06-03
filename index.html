@@ -64,6 +64,14 @@
 </style>
 
 <body style="margin: 0px; overflow: hidden">
+  <div id="target1" class="target">
+    <img src="img/curry.jpg" alt="A-Frame" />
+    <div class="cf">
+      <h3>A-Frame</h3>
+      <p>A-Frameは簡単にWeb VRが実現できるフレームワークです。</p>
+    </div>
+    <p class="detail">320px × 200px</p>
+  </div>
   <!-- <div class="note" id="sub">
     <div>1000札を写してください</div>
   </div> -->
@@ -97,6 +105,11 @@
         material="color: blue"
         scale="10 10 10"
       >
+        <a-plane
+          width="16"
+          height="10"
+          material="shader:html;target: #target1;"
+        ></a-plane>
       </a-entity>
     </a-nft>
     <a-entity camera></a-entity>

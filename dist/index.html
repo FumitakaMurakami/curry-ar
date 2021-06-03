@@ -1,0 +1,105 @@
+<script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
+<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+<style>
+  .arjs-loader {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .arjs-loader div {
+    text-align: center;
+    font-size: 1.25em;
+    color: white;
+  }
+  .loader {
+    height: 100%;
+    width: 100%;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .after-loader {
+    text-align: center;
+    font-size: 1.25em;
+    color: transparent;
+  }
+  .note {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    z-index: 10;
+    color: white;
+    font-size: 2.2em;
+  }
+
+  /* .say-hi-button {
+    padding: 0.25em;
+    border-radius: 4px;
+    border: none;
+    background: white;
+    color: black;
+    width: 4em;
+    height: 2em;
+  } */
+</style>
+
+<body style="margin: 0px; overflow: hidden">
+  <!-- <div class="note" id="sub">
+    <div>1000札を写してください</div>
+  </div> -->
+  <div class="arjs-loader">
+    <div>Loading, please wait...</div>
+  </div>
+  <!-- <div class="loader" id="info">
+    <div>カメラに1000円札を写してみよう！</div>
+  </div> -->
+  <a-scene
+    vr-mode-ui="enabled: false;"
+    renderer="logarithmicDepthBuffer: true;"
+    embedded
+    arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
+  >
+    <!-- <a-assets>
+    <a-asset-item id="sample" src="https://fumitakamurakami.github.io/ARJS/100yen_002.glb"></a-asset-item>
+  </a-assets> -->
+    <a-nft
+      type="nft"
+      url="https://fumitakamurakami.github.io/ARJS/curry"
+      smooth="true"
+      smoothCount="10"
+      smoothTolerance=".01"
+      smoothThreshold="5"
+      registerevents
+    >
+      <a-entity
+        id="bluebox"
+        geometry="primitive: box"
+        material="color: blue"
+        scale="100 100 100"
+        movelink
+      >
+      </a-entity>
+    </a-nft>
+    <a-entity camera></a-entity>
+  </a-scene>
+</body>
+
+<!-- コメント -->
